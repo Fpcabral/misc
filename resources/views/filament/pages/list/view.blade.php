@@ -3,10 +3,17 @@
     'fi-resource-' . str_replace('/', '-', $this->getResource()::getSlug()),
     'fi-resource-record-' . $record->getKey(),
 ])>
-    @foreach ($this->record->items as $item)
-        <div>
-            <p>{{ $item->item }}</p>
-        </div>
-    @endforeach
+    <x-filament::section>
+        <x-slot name="heading">
+            Lista
+        </x-slot>
+
+        {{-- Content --}}
+        @foreach ($this->record->items as $item)
+            <div class="mb-2">
+                <p>{{ $item->item }}</p>
+            </div>
+        @endforeach
+    </x-filament::section>
 
 </x-filament-panels::page>
