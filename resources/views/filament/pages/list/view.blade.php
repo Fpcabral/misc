@@ -9,11 +9,11 @@
         </x-slot>
 
         {{-- Content --}}
-        @foreach ($this->record->items as $item)
-            <div class="mb-2">
-                <p>{{ $item->item }}</p>
-            </div>
-        @endforeach
+        <div class="flex flex-col space-x-4">
+            @foreach ($this->record->items as $item)
+                <p class="mb-2">{{ $item->item }}</p>
+            @endforeach
+        </div>
     </x-filament::section>
 
 </x-filament-panels::page>
